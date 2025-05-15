@@ -3,6 +3,7 @@ steps:
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/hello-world', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/hello-world']
+  # Optional: Deploy to Cloud Run (you can remove if you don't need)
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
     args:
